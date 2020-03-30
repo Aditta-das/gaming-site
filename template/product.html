@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="best_burgers_area">
+        <div class="container" style="position: relative;top: 184px;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title text-center mb-80">
+                        <span>Gaming Accessories</span>
+                        <h3>{{ object.title }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- features_room_startt -->
+    <div class="Burger_President_area">
+            <div class="Burger_President_here">
+
+                <div class="single_Burger_President">
+                    <div class="room_thumb">
+                        <img src="{{ object.image.url }}" alt="">
+                        <div class="room_heading d-flex justify-content-between align-items-center">
+                            <div class="room_heading_inner">
+                                <span>${{ object.price }}</span>
+                                <h3>{{ object.title }}</h3>
+                                <p>{{ object.description }}</p>
+                                <a href="{{ object.get_add_to_cart_url }}" class="boxed-btn3 btn btn-primary">Order Now</a>
+                                <a href="{{ object.get_remove_from_cart_url }}" class="boxed-btn3 btn btn-danger">Remove</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- features_room_end -->
+{% endblock %}

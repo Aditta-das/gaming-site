@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			{% for slider in slide %}
+			<div class="hero-item set-bg" data-setbg="{{ slider.image.url }}">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<h2>{{ slider.title }}</h2>
+							<p>{{ slider.paragraph }}</p>
+							<a href="{% url 'shop' %}" class="site-btn">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+	<!-- Blog section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 blog-posts">
+					<div class="row">
+						{% for gn in blog_post %}
+						<div class="col-md-4">
+							<div class="blog-post">
+								<img src="{{ gn.image.url }}" alt="">
+								<div class="post-date">{{ gn.date }}</div>
+								<a href="{{ gn.get_absolute_url }}"><h4>{{ gn.title }}</h4></a>
+								<div class="post-metas">
+									<div class="post-meta">By {{ gn.user }}</div>
+									<div class="post-meta">in <a href="#">Games</a></div>
+									<!---<div class="post-meta">{{ gn.comments.count }} Comment</div>--->
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipi-scing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum susp-endisse ultrices gravida. Risus commodo.</p>
+								<a href="{{ gn.get_absolute_url }}" class="read-more">Read More</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<!---<div class="col-lg-4 sidebar">
+					<div class="sb-widget">
+						<form class="sb-search">
+							<input type="text" placeholder="Search">
+						</form>
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Categories</h2>
+						<ul class="sb-cata-list">
+							<li><a href="">Games<span>20</span></a></li>
+							<li><a href="">Gaming Tips & Tricks<span>23</span></a></li>
+							<li><a href="">Online Games<span>25</span></a></li>
+							<li><a href="">Team Games<span>17</span></a></li>
+							<li><a href="">Community<span>15</span></a></li>
+							<li><a href="">Uncategorized<span>22</span></a></li>
+						</ul>
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Latest News</h2>
+						<div class="latest-news-widget">
+							<div class="ln-item">
+								<img src="img/blog-thumbs/1.jpg" alt="">
+								<div class="ln-text">
+									<div class="ln-date">April 1, 2019</div>
+									<h6>10 Amazing new games</h6>
+									<div class="ln-metas">
+										<div class="ln-meta">By Admin</div>
+										<div class="ln-meta">in <a href="#">Games</a></div>
+										<div class="ln-meta">3 Comments</div>
+									</div>
+								</div>
+							</div>
+							<div class="ln-item">
+								<img src="img/blog-thumbs/2.jpg" alt="">
+								<div class="ln-text">
+									<div class="ln-date">April 1, 2019</div>
+									<h6>10 Amazing new games</h6>
+									<div class="ln-metas">
+										<div class="ln-meta">By Admin</div>
+										<div class="ln-meta">in <a href="#">Games</a></div>
+										<div class="ln-meta">3 Comments</div>
+									</div>
+								</div>
+							</div>
+							<div class="ln-item">
+								<img src="img/blog-thumbs/3.jpg" alt="">
+								<div class="ln-text">
+									<div class="ln-date">April 1, 2019</div>
+									<h6>10 Amazing new games</h6>
+									<div class="ln-metas">
+										<div class="ln-meta">By Admin</div>
+										<div class="ln-meta">in <a href="#">Games</a></div>
+										<div class="ln-meta">3 Comments</div>
+									</div>
+								</div>
+							</div>
+							<div class="ln-item">
+								<img src="img/blog-thumbs/4.jpg" alt="">
+								<div class="ln-text">
+									<div class="ln-date">April 1, 2019</div>
+									<h6>10 Amazing new games</h6>
+									<div class="ln-metas">
+										<div class="ln-meta">By Admin</div>
+										<div class="ln-meta">in <a href="#">Games</a></div>
+										<div class="ln-meta">3 Comments</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="sb-widget">
+						<a href="#" class="add">
+							<img src="img/add-2.jpg" alt="">
+						</a>
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Latest Comments</h2>
+						<div class="latest-comments-widget">
+							<div class="lc-item">
+								<img src="img/author-thumbs/1.jpg" alt="">
+								<div class="lc-text">
+									<h6>Jane Smith<span> In </span><a href="">The best 2019 Games</a></h6>
+									<div class="lc-date">April 1,2019</div>
+								</div>
+							</div>
+							<div class="lc-item">
+								<img src="img/author-thumbs/2.jpg" alt="">
+								<div class="lc-text">
+									<h6>Michael James<span> In </span><a href="">The best 2019 Games</a></h6>
+									<div class="lc-date">April 1,2019</div>
+								</div>
+							</div>
+							<div class="lc-item">
+								<img src="img/author-thumbs/3.jpg" alt="">
+								<div class="lc-text">
+									<h6>Jane Smith<span> In </span><a href="">The best 2019 Games</a></h6>
+									<div class="lc-date">April 1,2019</div>
+								</div>
+							</div>
+							<div class="lc-item">
+								<img src="img/author-thumbs/4.jpg" alt="">
+								<div class="lc-text">
+									<h6>Michael James<span> In </span><a href="">The best 2019 Games</a></h6>
+									<div class="lc-date">April 1,2019</div>
+								</div>
+							</div>
+							<div class="lc-item">
+								<img src="img/author-thumbs/1.jpg" alt="">
+								<div class="lc-text">
+									<h6>Jane Smith<span> In </span><a href="">The best 2019 Games</a></h6>
+									<div class="lc-date">April 1,2019</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>--->
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->
+
+	<!-- Blog list section -->
+	<section class="blog-list-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="small-blog-list">
+						<div class="sb-item">
+							<img src="img/blog-thumbs/6.jpg" alt="">
+							<div class="sb-text">
+								<div class="sb-date">April 1,2019</div>
+								<h6>10 Amazing new games</h6>
+								<div class="sb-metas">
+									<div class="sb-meta">By Admin</div>
+									<div class="sb-meta">in <a href="#">Games</a></div>
+									<div class="sb-meta">3 Comments</div>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
+							</div>
+						</div>
+						<div class="sb-item">
+							<img src="img/blog-thumbs/7.jpg" alt="">
+							<div class="sb-text">
+								<div class="sb-date">April 1,2019</div>
+								<h6>10 Amazing new games</h6>
+								<div class="sb-metas">
+									<div class="sb-meta">By Admin</div>
+									<div class="sb-meta">in <a href="#">Games</a></div>
+									<div class="sb-meta">3 Comments</div>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
+							</div>
+						</div>
+						<div class="sb-item">
+							<img src="img/blog-thumbs/8.jpg" alt="">
+							<div class="sb-text">
+								<div class="sb-date">April 1,2019</div>
+								<h6>10 Amazing new games</h6>
+								<div class="sb-metas">
+									<div class="sb-meta">By Admin</div>
+									<div class="sb-meta">in <a href="#">Games</a></div>
+									<div class="sb-meta">3 Comments</div>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
+							</div>
+						</div>
+						<div class="sb-item">
+							<img src="img/blog-thumbs/9.jpg" alt="">
+							<div class="sb-text">
+								<div class="sb-date">April 1,2019</div>
+								<h6>10 Amazing new games</h6>
+								<div class="sb-metas">
+									<div class="sb-meta">By Admin</div>
+									<div class="sb-meta">in <a href="#">Games</a></div>
+									<div class="sb-meta">3 Comments</div>
+								</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="sb-widget">
+						<h2 class="sb-title">Top 5 hero this week</h2>
+						<div class="latest-news-widget top-five">
+							{% for list in list_post %}
+							<div class="ln-item">
+								<div class="ln-index">{{ forloop.counter }}</div>
+								<img src="{{ list.hero_image.url }}" alt="">
+								<div class="ln-text">
+									<div class="ln-date">{{ list.date }}</div>
+									<a href="{{ list.get_hero_story_url }}"><h6>{{ list.title }}</h6></a>
+									<div class="ln-metas">
+										<div class="ln-meta">By {{ list.user }}</div>
+										<div class="ln-meta">in <a href="#">Games</a></div>
+										<div class="ln-meta">{{ list.count }} Comments</div>
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog list section end -->
+
+	<!-- Video section -->
+	<div class="video-section">
+		<div class="container">
+			<div class="video-logo">
+				<img src="{% static 'img/logo-2.png' %}" alt="">
+				<p>2018’s Best Game</p>
+			</div>
+            {% for s in social %}
+			<div class="video-popup-warp">
+				<img src="{{ s.image.url }}" alt="">
+				<a href="" class="video-play"><i class="fa fa-play"></i></a>
+			</div>
+            {% endfor %}
+		</div>
+	</div>
+	<!-- Video section end -->
+
+{% endblock %}

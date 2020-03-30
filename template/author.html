@@ -1,0 +1,9 @@
+<body>
+   <form action="" method="POST" enctype="multipart/form-data">
+	<div class="row">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="site-btn" value="submit">Submit</button>
+	</div>
+</form>
+</body>

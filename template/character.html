@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="img/header-bg/1.jpg">
+		<div class="container">
+			<h2>Characters</h2>
+		</div>
+	</section>
+{% for hero in object_list %}
+	<!-- Character section 2 -->
+	<section class="characters-section character-two">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 offset-lg-5">
+					<div class="character-info">
+						<h2>{{ hero.title }}</h2>
+						<h5>{{ hero.user }}</h5>
+						<h5>Likes:{{ hero.total_like }}</h5>
+						<p>{{ hero.description|truncatechars:100 }}</p>
+						<div class="progress-warp">
+							{% if hero.strenght > 100 %}
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-4" data-cpvalue="0" data-cpcolor="#10ddb4"></div>
+								<h4>Strenghts</h4>
+							</div>
+							{% else %}
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-4" data-cpvalue="{{ hero.strenght }}" data-cpcolor="#10ddb4"></div>
+								<h4>Strenghts</h4>
+							</div>
+							{% endif %}
+
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-5" data-cpvalue="{{ hero.power }}" data-cpcolor="#10ddb4"></div>
+								<h4>Power</h4>
+							</div>
+							<div class="cp-item">
+								<div class="circle-progress" data-cpid="id-6" data-cpvalue="{{ hero.weapon }}" data-cpcolor="#10ddb4"></div>
+								<h4>Weapons</h4>
+							</div>
+						</div>
+
+		<!---<form method="post">
+			{% csrf_token %}
+			<div class="d-block my-3">
+			<div class="custom-control custom-radio">
+				  <input id="strenght" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+					  <label class="custom-control-label" for="strenght">Strenght</label>
+					</div>
+					<div class="custom-control custom-radio">
+					  <input id="power" name="paymentMethod" type="radio" class="custom-control-input" required>
+					  <label class="custom-control-label" for="power">Power</label>
+					</div>
+					<div class="custom-control custom-radio">
+					  <input id="weapon" name="paymentMethod" type="radio" class="custom-control-input" required>
+				  <label class="custom-control-label" for="weapon">Weapon</label>
+			</div>
+		</div>
+	</form>-->
+
+
+
+<form method="post" action="{{ hero.get_delete_url }}">
+	{% csrf_token %}
+    <input type="submit" value="Confirm">
+</form>
+
+
+
+
+						<a href="{{ hero.get_hero_story_url }}" class="site-btn">Story</a>
+					</div>
+				</div>
+			</div>
+			<div class="character-img" style="position: absolute;width: 376px;top: 22px;left: 89px;">
+				<img src="{{ hero.hero_image.url }}" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- Character section 2 end -->
+{% endfor %}
+
+	<!-- Banner section -->
+	<section class="banner-section set-bg" data-setbg="img/banner-bg.jpg">
+		<div class="container">
+			<div class="banner-text text-white">
+				<div class="banner-logo">
+					<h6>Spring Special Offer</h6>
+					<img src="img/logo-3.png" alt="">
+				</div>
+				<p>Vestibulum malesuada aliquet libero viverra cursus. Aliquam erat volutpat. Morbi id dictum quam, ut commodo lorem. In at nisi nec arcu porttitor aliquet vitae at dui. Sed sollicitudin nulla non leo viverra scelerisque.</p>
+				<a href="#" class="site-btn sb-color">Buy it now</a>
+			</div>
+		</div>
+	</section>
+	<!-- Banner section end -->
+
+{% endblock %}

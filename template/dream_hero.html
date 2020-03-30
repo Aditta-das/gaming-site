@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Page top section -->
+	<section class="page-top-section set-bg" data-setbg="img/header-bg/1.jpg">
+		<div class="container">
+			<h2>Dream Hero</h2>
+            <p>Create Your Personal Hero</p>
+		</div>
+	</section>
+    <form action="{% url 'create-hero' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="container">
+                <div class="form-group">
+                    <br>
+                    <div class="col-6">
+                        {{ form.title }}
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        {{ form.description }}
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        <div class="form-control">
+                            {{ form.hero_image }}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        {{ form.strenght }}
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        {{ form.power }}
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        {{ form.weapon }}
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        {{ form.slug }}
+                    </div>
+                    <br>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- Blog section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="blog-post single-post">
+						<img src="{{ comment_post.image.url }}" alt="">
+						<div class="post-date">{{ comment_post.date }}</div>
+						<h3>{{ comment_post.title }}</h3>
+						<div class="post-metas">
+							<div class="post-meta">By {{ comment_post.user }}</div>
+							<div class="post-meta">in <a href="#">Games</a></div>
+							<div class="post-meta">{{ comments.count }} Comment{{ comments.count|pluralize }}</div>
+						</div>
+                        <p>{{ comment_post.description }}</p>
+						<div class="comments">
+							<h5>Comments: {{ comments.count }}</h5>
+							<h5>Likes: {{ comment_post.total_post_like }}</h5>
+							<h5>Views: {{ comment_post.total_view }}</h5>
+
+							<form action="{{ comment_post.get_post_like }}" method="post">
+								{% csrf_token %}
+									<button type="submit" class="btn btn-primary">Like</button>
+							</form>
+
+
+							<ul class="comments-list">
+							{% for comment in comments %}
+								<li>
+									<img src="img/author-thumbs/1.jpg" alt="">
+									<div class="comment-text">
+										<h6>{{ comment.user }} <a href="#" class="reply">Reply</a></h6>
+										<div class="comment-date">April 1,2019</div>
+										<p>{{ comment.message }}</p>
+									</div>
+								</li>
+							{% endfor %}
+							</ul>
+
+
+<form method="post" action="{{ get_success_url }}">
+	<div class="row">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button class="site-btn" value="submit">post Comment</button>
+	</div>
+</form>
+
+							<!---------------template comment----------------->
+							<!----<h5>Leave a comment</h5>
+							<form class="comment-form">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" placeholder="Your name">
+									</div>
+									<div class="col-md-6">
+										<input type="text" placeholder="Your e-mail">
+									</div>
+									<div class="col-md-12">
+										<input type="text" placeholder="your text">
+										<button class="site-btn">post Comment</button>
+									</div>
+								</div>
+							</form>--->
+							<!---------------template comment----------------->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 sidebar">
+					<div class="sb-widget">
+						<form class="sb-search">
+							<input type="text" placeholder="Search">
+						</form>
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Categories</h2>
+						<ul class="sb-cata-list">
+							<li><a href="">Games<span>20</span></a></li>
+							<li><a href="">Gaming Tips & Tricks<span>23</span></a></li>
+							<li><a href="">Online Games<span>25</span></a></li>
+							<li><a href="">Team Games<span>17</span></a></li>
+							<li><a href="">Community<span>15</span></a></li>
+							<li><a href="">Uncategorized<span>22</span></a></li>
+						</ul>
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Latest News</h2>
+						<div class="latest-news-widget">
+
+							<div class="ln-item">
+								<img src="{{ g.image.url }}" alt="">
+								<div class="ln-text">
+									<div class="ln-date">{{ g.date }}</div>
+									<h6>{{ g.title }}</h6>
+									<div class="ln-metas">
+										<div class="ln-meta">By {{ g.user }}</div>
+										<div class="ln-meta">in <a href="#">Games</a></div>
+										<div class="ln-meta">{{ comments.count}} Comment{{ comments.count|pluralize }}</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!--<div class="sb-widget">
+						<a href="#" class="add">
+							<img src="img/add-2.jpg" alt="">
+						</a>
+					</div>--->
+					<div class="sb-widget">
+						<h2 class="sb-title">Latest Comments</h2>
+						<div class="latest-comments-widget">
+							<div class="lc-item">
+								<img src="img/author-thumbs/1.jpg" alt="">
+								<div class="lc-text">
+									<h6>By admin<span> In </span><a href="">Title is here</a></h6>
+									<div class="lc-date">April 1,2019</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->
+{% endblock %}
+

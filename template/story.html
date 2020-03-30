@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Blog section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="blog-post single-post">
+						<img src="{{ comment_set.hero_image.url }}" alt="">
+						<div class="post-date">{{ comment_set.date }}</div>
+						<h3>{{ comment_set.title }}</h3>
+						<div class="post-metas">
+							<div class="post-meta">By {{ comment_set.user }}</div>
+							<div class="post-meta">in <a href="#">Games</a></div>
+						</div>
+                        <p>{{ comment_set.description }}</p>
+						<div class="comments">
+							<a href="">update</a>
+							<h5>Comments: {{ commenting.count }}</h5>
+							<h5>Likes: {{ comment_set.total_like }}</h5>
+							<h5>view: {{ comment_set.Views }}</h5>
+
+							<form action="{{ comment_set.get_absolute_url }}" method="post">
+								{% csrf_token %}
+									<button type="submit" class="btn btn-primary">Like</button>
+							</form>
+							<img src="{{ c.author.image.url }}" alt="">
+								<ul class="comments-list">
+									{% for c in commenting %}
+									<li>
+										<div class="comment-text">
+											<img src="{{ pro_pic.image.url }}" alt="">
+											<h6>{{ c.user }} <a href="#" class="reply">Reply</a></h6>
+											<div class="comment-date">April 1,2019</div>
+											<p>{{ c.message }}</p>
+										</div>
+									</li>
+									{% endfor %}
+								</ul>
+							<form method="post" action="{{ get_success_url }}">
+								<div class="row">
+									{% csrf_token %}
+									{{ charform.as_p }}
+									<button class="site-btn" value="submit">post Comment</button>
+								</div>
+							</form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
