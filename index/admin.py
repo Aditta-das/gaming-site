@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Slider, GameNews, Character, Comment, CharacterComment, Shop, OrderItem, Order, Social, Author
+from .models import Slider, GameNews, Character, Comment, CharacterComment, Shop, OrderItem, Order, Social, Author, Friend
 
 admin.site.register(Slider)
 
@@ -26,4 +26,5 @@ admin.site.register(OrderItem, OrderItemAdmin)
 admin.site.register(Order)
 admin.site.register(Social)
 admin.site.register(Author)
+admin.site.register(Friend)
 

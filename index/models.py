@@ -162,6 +162,14 @@ class Author(models.Model):
         return self.user.username
 
 
+class Friend(models.Model):
+    users = models.ManyToManyField(Author)
+    current_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+
+
+
+
 
 
 

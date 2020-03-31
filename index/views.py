@@ -8,7 +8,7 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import FormMixin, ModelFormMixin
-from .models import GameNews, Character, Comment, Shop, OrderItem, Order, CharacterComment, Slider, Social, Author
+from .models import GameNews, Character, Comment, Shop, OrderItem, Order, CharacterComment, Slider, Social, Author, Friend, User
 from .forms import DreamHeroForm, CommentForm, CharCommentForm, AuthorProfForm
 from django.utils.text import slugify
 from django.shortcuts import reverse
@@ -25,6 +25,7 @@ class IndexView(ListView):
         context['list_post'] = Character.objects.all()[:5]
         context['slide'] = Slider.objects.all()
         context['social'] = Social.objects.all()
+        context['friends_list'] = Author.objects.exclude(id=self.request.user.id)
         return context
 
 class PostDetail(FormMixin, DetailView):
@@ -189,14 +190,11 @@ class UpdateCharacterView(UpdateView):
     template_name = "dream_hero.html"
 
     def get(self, *args, **kwargs):
-        form = DreamHeroForm()
+        out = get_object_or_404(Character)
+        form = DreamHeroForm(self.request.PATCH, self.request.FILES or None)
         return render(self.request, 'dream_hero.html', {'form': form})
 
-    def post(self, *args, **kwargs):
-        out = get_object_or_404(Character)
-        form = DreamHeroForm(self.request.POST, self.request.FILES or None, instance=out)
-        if form.is_valid():
-            return redirect('character-post')
+
 
 
 
@@ -306,3 +304,6 @@ class ProfileView(LoginRequiredMixin, DetailView):
             return render(self.request, 'profile.html', context)
         except ObjectDoesNotExist:
             return redirect('author')
+
+
+

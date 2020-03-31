@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d71ada-0ca3-4988-8b55-f99dd3810f11" name="Default Changelist" comment="new">
-      <change afterPath="$PROJECT_DIR$/media/media/PikPng.com_iron-man-png_557391.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/PikPng.com_iron-man-png_557391_eQNcoHD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0083_friend.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0084_auto_20200331_0110.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0085_auto_20200331_0110.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0086_remove_friend_current_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0087_friend_current_user.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0088_auto_20200331_0201.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/123.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/a236eaab12b9cd9f23e8838dca029eed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/jamal.JPG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/character.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/character.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

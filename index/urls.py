@@ -34,5 +34,5 @@ urlpatterns = [
     path('like-posts-blog/<slug>', like_post_blog, name='like-posts-blog'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('author/', AuthorProfileView.as_view(), name='author'),
-    path('profile/<user>', ProfileView.as_view(), name='profile')
+    path('profile/<user>', ProfileView.as_view(), name='profile'),
 ]

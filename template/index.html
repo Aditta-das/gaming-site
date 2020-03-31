@@ -172,58 +172,41 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="small-blog-list">
-						<div class="sb-item">
-							<img src="img/blog-thumbs/6.jpg" alt="">
-							<div class="sb-text">
-								<div class="sb-date">April 1,2019</div>
-								<h6>10 Amazing new games</h6>
-								<div class="sb-metas">
-									<div class="sb-meta">By Admin</div>
-									<div class="sb-meta">in <a href="#">Games</a></div>
-									<div class="sb-meta">3 Comments</div>
+
+						<!----------------Start------------------------------------------>
+						<div class="container">
+						  <div class="top" style="text-align:center;">
+							<h2>Friend's List</h2>
+						  </div>
+						  <div class="row">
+
+
+								{% for friend in friends_list %}
+							  <div class="col-sm-12">
+								<div class="col-sm-2">
+								  <img src="{{ friend.image.url }}" class="img-circle" width="60px">
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
-							</div>
-						</div>
-						<div class="sb-item">
-							<img src="img/blog-thumbs/7.jpg" alt="">
-							<div class="sb-text">
-								<div class="sb-date">April 1,2019</div>
-								<h6>10 Amazing new games</h6>
-								<div class="sb-metas">
-									<div class="sb-meta">By Admin</div>
-									<div class="sb-meta">in <a href="#">Games</a></div>
-									<div class="sb-meta">3 Comments</div>
+								<div class="col-sm-8">
+								  <h4><a href=".">{{ friend.user.get_full_name }}</a></h4>
+								  <p><a href="#">4 mutual friends</a></p>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
-							</div>
-						</div>
-						<div class="sb-item">
-							<img src="img/blog-thumbs/8.jpg" alt="">
-							<div class="sb-text">
-								<div class="sb-date">April 1,2019</div>
-								<h6>10 Amazing new games</h6>
-								<div class="sb-metas">
-									<div class="sb-meta">By Admin</div>
-									<div class="sb-meta">in <a href="#">Games</a></div>
-									<div class="sb-meta">3 Comments</div>
+								<div class="col-sm-2">
+								  <img src="" alt="group" width="40px" />
+								  <br>
+								  <a href="#">Send Request</a>
 								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
-							</div>
+							  </div>
+								{% endfor %}
+							  <div class="clearfix"></div>
+							  <hr />
+						  </div>
 						</div>
-						<div class="sb-item">
-							<img src="img/blog-thumbs/9.jpg" alt="">
-							<div class="sb-text">
-								<div class="sb-date">April 1,2019</div>
-								<h6>10 Amazing new games</h6>
-								<div class="sb-metas">
-									<div class="sb-meta">By Admin</div>
-									<div class="sb-meta">in <a href="#">Games</a></div>
-									<div class="sb-meta">3 Comments</div>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo. </p>
-							</div>
-						</div>
+
+
+
+						<!----------------End------------------------------------------>
+
+
 					</div>
 				</div>
 				<div class="col-lg-4">
