@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="bg-image">
                 <span class="bg-picture-overlay">
-                    <img src="{{ prof.cover_image.url }}">
+                    <img src="{{ suggest.cover_image.url }}">
                 </span>
             </div>
         </div>
@@ -24,13 +24,11 @@
 	                <div class="col-md-6 ml-auto mr-auto">
         	           <div class="profile">
 	                        <div class="avatar">
-	                            <img src="{{ prof.image.url }}" alt="Circle Image" class="img-raised img-fluid" style="width: 180px; height: 180px;">
+	                            <img src="{{ suggest.image.url }}" alt="Circle Image" class="img-raised img-fluid" style="width: 180px; height: 180px;">
 	                        </div>
 	                        <div class="name" style="position: relative; top: 25px;">
-	                            <h3 class="title">{{ user.get_full_name }}</h3>
+	                            <h3 class="title">{{ suggest.user.get_full_name }}</h3>
 								<h6>Beginner</h6>
-								<h6 class="card-title">post: {{ list.get_num_post }}</h6>
-								<h6>{{ prof.gender }}</h6>
 								<a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook"></i></a>
 								<a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-instagram"></i></a>
                                 <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
@@ -40,7 +38,7 @@
     	            </div>
                 </div>
                 <div class="description text-center" style="margin:52px;">
-                    <p>{{ prof.bio }}</p>
+                    <p>{{ suggest.bio }}</p>
                 </div>
                 <section class="related">
                     <div class="topic text-center">
@@ -51,18 +49,11 @@
                                 {% for own in your_post %}
                                 <div class="col-lg-4">
                                     <div class="card" style="width:18rem; margin:12px;">
-                                        <img class="card-img-top" src="{{ own.hero_image.url }}" style="max-width:70% !important;">
+                                        <img class="card-img-top" src="{{ own.hero_image.url }}">
                                         <div class="card-body">
                                             <h5 class="card-title">{{ own.title }}</h5>
                                             <h5 class="card-title">Likes: {{ own.total_like }}</h5>
-                                            <h5 class="card-title">post: {{ own.get_num_post }}</h5>
                                             <p class="card-text">{{ own.description| truncatechars:100 }}</p>
-<form method="post" action="{{ own.get_delete_url }}">
-	{% csrf_token %}
-    <input type="submit" value="Remove" class="btn btn-danger">
-</form>
-
-
                                             <a href="{{ own.get_hero_story_url }}" class="btn btn-primary">Go here</a>
                                         </div>
                                     </div>

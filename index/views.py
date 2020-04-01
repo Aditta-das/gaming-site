@@ -25,7 +25,7 @@ class IndexView(ListView):
         context['list_post'] = Character.objects.all()[:5]
         context['slide'] = Slider.objects.all()
         context['social'] = Social.objects.all()
-        context['friends_list'] = Author.objects.exclude(id=self.request.user.id)
+        context['friends_list'] = Author.objects.exclude(user=self.request.user).order_by('-id')
         return context
 
 class PostDetail(FormMixin, DetailView):
@@ -279,10 +279,12 @@ class AuthorProfileView(View):
             image = form.cleaned_data['image']
             cover_image = form.cleaned_data['cover_image']
             bio = form.cleaned_data['bio']
+            gender = form.cleaned_data['gender']
             pro = Author(
                 image=image,
                 cover_image=cover_image,
                 bio=bio,
+                gender=gender,
                 user=self.request.user,
             )
             pro.save()
@@ -291,7 +293,7 @@ class AuthorProfileView(View):
 
 
 class ProfileView(LoginRequiredMixin, DetailView):
-    model = Author
+    model = Character
 
     def get(self, *args, **kwargs):
         try:
@@ -307,3 +309,7 @@ class ProfileView(LoginRequiredMixin, DetailView):
 
 
 
+class SuggestProfileView(LoginRequiredMixin, DetailView):
+    model = Author
+    template_name = 'suggest_friend.html'
+    context_object_name = 'suggest'

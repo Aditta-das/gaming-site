@@ -2,21 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3d71ada-0ca3-4988-8b55-f99dd3810f11" name="Default Changelist" comment="new">
-      <change afterPath="$PROJECT_DIR$/index/migrations/0083_friend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index/migrations/0084_auto_20200331_0110.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index/migrations/0085_auto_20200331_0110.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index/migrations/0086_remove_friend_current_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index/migrations/0087_friend_current_user.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index/migrations/0088_auto_20200331_0201.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/123.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/a236eaab12b9cd9f23e8838dca029eed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/media/jamal.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0089_auto_20200331_1621.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index/migrations/0090_author_gender.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/1_9uLfwIK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/4_PQUYigH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/add-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/banner-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/female.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/kratos_god_of_war_artwork.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/kratos_god_of_war_artwork_eNAjaZc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/kratos_god_of_war_artwork_fqIuYhT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/kratos_god_of_war_artwork_i8kp5qT.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/need_for_speed_heat_chevrolet_corvette_grand_sport_4k_iaPY19j.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/street_striker_fortnite_chapter_2_4k_MzTOuI4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/wallpapersden.com_jumanji-the-video-game_3840x2160_GPeDhnO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/wallpapersden.com_jumanji-the-video-game_3840x2160_VfiT6On.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/wallpapersden.com_jumanji-the-video-game_3840x2160_aWYXqH3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/media/wallpapersden.com_jumanji-the-video-game_3840x2160_c7tcfRu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/suggest_friend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/index/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/character.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/character.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/dream_hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/dream_hero.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/profile.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +57,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Food" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

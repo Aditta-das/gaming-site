@@ -46,4 +46,4 @@ def signin(request):
 
 def signout(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('signin')

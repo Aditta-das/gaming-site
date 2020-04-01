@@ -15,6 +15,8 @@ from .views import (IndexView,
                     OrderSummaryView,
                     AuthorProfileView,
                     ProfileView,
+                    SuggestProfileView,
+
                     )
 from . import views
 
@@ -35,4 +37,6 @@ urlpatterns = [
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('author/', AuthorProfileView.as_view(), name='author'),
     path('profile/<user>', ProfileView.as_view(), name='profile'),
+    path('suggest/<pk>', SuggestProfileView.as_view(), name='suggest'),
+
 ]

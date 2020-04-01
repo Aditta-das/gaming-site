@@ -31,7 +31,7 @@
 						<div class="col-md-4">
 							<div class="blog-post">
 								<img src="{{ gn.image.url }}" alt="">
-								<div class="post-date">{{ gn.date }}</div>
+								<div class="post-date">{{ gn.date|date:"F j, Y" }}</div>
 								<a href="{{ gn.get_absolute_url }}"><h4>{{ gn.title }}</h4></a>
 								<div class="post-metas">
 									<div class="post-meta">By {{ gn.user }}</div>
@@ -170,43 +170,29 @@
 	<section class="blog-list-section spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-7">
 					<div class="small-blog-list">
-
-						<!----------------Start------------------------------------------>
-						<div class="container">
-						  <div class="top" style="text-align:center;">
-							<h2>Friend's List</h2>
-						  </div>
-						  <div class="row">
-
-
-								{% for friend in friends_list %}
-							  <div class="col-sm-12">
-								<div class="col-sm-2">
-								  <img src="{{ friend.image.url }}" class="img-circle" width="60px">
+						<!------------------try------------------->
+						<div class="col-lg-5">
+					<div class="sb-widget">
+						<h2 class="sb-title">Suggested Friend</h2>
+						<div class="latest-news-widget top-five">
+							{% for friend in friends_list %}
+							<div class="ln-item">
+								<img src="{{ friend.image.url }}" class="img-circle" style="width:60px;height:60px;border-radius:50%;">
+								<div class="ln-text">
+									<a href="{{ friend.get_suggest_url }}"><h5 style="color:white;">{{ friend.user.get_full_name|capfirst }}</h5></a>
+									<div class="ln-metas">
+										<div class="ln-meta"><h7 style="color:white;">4 mutual friends</h7></div>
+									</div>
 								</div>
-								<div class="col-sm-8">
-								  <h4><a href=".">{{ friend.user.get_full_name }}</a></h4>
-								  <p><a href="#">4 mutual friends</a></p>
-								</div>
-								<div class="col-sm-2">
-								  <img src="" alt="group" width="40px" />
-								  <br>
-								  <a href="#">Send Request</a>
-								</div>
-							  </div>
-								{% endfor %}
-							  <div class="clearfix"></div>
-							  <hr />
-						  </div>
+							</div>
+							<a href="" class="btn btn-primary" style="position: relative;bottom: 46px;left: 87px;color:white; width:110px">Follow</a>
+							{% endfor %}
 						</div>
-
-
-
-						<!----------------End------------------------------------------>
-
-
+					</div>
+				</div>
+						<!----------------tryend------------------>
 					</div>
 				</div>
 				<div class="col-lg-4">
@@ -218,7 +204,7 @@
 								<div class="ln-index">{{ forloop.counter }}</div>
 								<img src="{{ list.hero_image.url }}" alt="">
 								<div class="ln-text">
-									<div class="ln-date">{{ list.date }}</div>
+									<div class="ln-date">{{ list.date|date:"F j, Y" }}</div>
 									<a href="{{ list.get_hero_story_url }}"><h6>{{ list.title }}</h6></a>
 									<div class="ln-metas">
 										<div class="ln-meta">By {{ list.user }}</div>

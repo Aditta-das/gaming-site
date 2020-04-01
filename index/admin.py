@@ -25,6 +25,10 @@ admin.site.register(OrderItem, OrderItemAdmin)
 
 admin.site.register(Order)
 admin.site.register(Social)
-admin.site.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ['id', 'user']
+    list_display_links = ['user']
+admin.site.register(Author, AuthorAdmin)
+
 admin.site.register(Friend)
 

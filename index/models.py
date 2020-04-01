@@ -79,6 +79,10 @@ class Character(models.Model):
         return self.likes.count()
 
 
+    def get_num_post(self):
+        return Character.objects.filter(user=self.user).count()
+
+
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -155,29 +159,38 @@ class Social(models.Model):
 class Author(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='media')
+    GENDER = (
+        ('Male', 'Male'),
+        ('Female', 'Female'),
+        ('Other', 'Other'),
+    )
+    gender = models.CharField(max_length=8, choices=GENDER, null=True, blank=True)
     bio = models.TextField()
     cover_image = models.ImageField(upload_to='media')
 
     def __str__(self):
         return self.user.username
 
+    def get_suggest_url(self):
+        return reverse('suggest', kwargs={
+            'pk': self.id
+        })
+
 
 class Friend(models.Model):
     users = models.ManyToManyField(Author)
-    current_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    current_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
 
+    @classmethod
+    def make_friend(cls, current_user, new_friend):
+        friend, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        friend.current_user.add(new_friend)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @classmethod
+    def remove_friend(cls, current_user, new_friend):
+        friend, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        friend.current_user.remove(new_friend)
